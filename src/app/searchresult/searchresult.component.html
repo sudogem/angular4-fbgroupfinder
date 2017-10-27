@@ -1,0 +1,26 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+    <ng-container matColumnDef="groupId">
+      <mat-header-cell *matHeaderCellDef> Group ID </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.groupId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="groupTitle">
+      <mat-header-cell *matHeaderCellDef> Group Title </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.groupTitle}}% </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="groupURL">
+      <mat-header-cell *matHeaderCellDef> Group URL </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.groupURL}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="isExist">
+      <mat-header-cell *matHeaderCellDef> Is he/she a member? </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.isExist === true ? "YES": "NO"}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
